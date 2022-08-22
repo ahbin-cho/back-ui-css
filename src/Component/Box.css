@@ -1,0 +1,26 @@
+.box-component {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.logo-img {
+    flex: 4;
+}
+
+.box-component .card-info {
+    border: 1px solid rgb(191 191 191);
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.card-info .score {
+    width: 20px;
+    height: 20px;
+    border-radius: 15px;
+    background-color: #c5c5c5;
+    margin: 3px;
+    display: inline-block;
+}
+.card-info .score.active {
+    background-color: #ffc161;    
+}
