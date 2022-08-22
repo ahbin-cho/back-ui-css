@@ -1,22 +1,44 @@
-import styled from "styled-components";
+import { Card, Divider, Rate, Typography } from "antd";
+
 import "./Card.css";
 
-const CardLabel = styled.label`
-  color: #ccc;
-`;
-
-const CardTitle = styled.h3`
-  padding-bottom: 15px;
-`;
-
-export function Card() {
+export function CardComponent(props) {
+  const {
+    layout = "vertical",
+    isVisibleCardInfo = true,
+    isVisibleCardEtc = true,
+  } = props;
   return (
     <div className="card-component">
-      <CardLabel>Card Label</CardLabel>
-      <CardTitle>Card Title</CardTitle>
-      <div className="card-description">
-        Hightlight <span className="cross-line">Cross out</span>
-      </div>
+      <Card
+        bordered
+        className={
+          layout === "vertical"
+            ? "vertical-card-layout"
+            : "horizontal-card-layout"
+        }
+        cover={<img alt="default" src="./logo192.png" />}
+      >
+        <div className="card-label">Card Label</div>
+        <div className="card-title">Card Title</div>
+        <div className="hightlight-style">
+          Hightlight <span className="cross-line-style">Cross Out</span>
+        </div>
+        {isVisibleCardInfo && (
+          <>
+            <Divider></Divider>
+            <div>
+              <Rate value={3}></Rate>
+              {isVisibleCardEtc && (
+                <Typography.Paragraph ellipsis>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry.
+                </Typography.Paragraph>
+              )}
+            </div>
+          </>
+        )}
+      </Card>
     </div>
   );
 }

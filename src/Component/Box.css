@@ -1,9 +1,9 @@
 .box-component {
     margin: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
-.logo-img {
+/* .logo-img {
     flex: 4;
 }
 
@@ -23,4 +23,4 @@
 }
 .card-info .score.active {
     background-color: #ffc161;    
-}
+} */
